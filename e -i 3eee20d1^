@@ -1,0 +1,11 @@
+[33mcommit d5dcc39c25a6cc982b17390007fa9463176a7062[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: Sahajewel <jewelsaha072@gmail.com>
+Date:   Wed Apr 16 17:46:37 2025 +0900
+
+    Removed .env file and added to .gitignore
+
+[33mcommit 3eee20d1a1244979ce698c829ef274ae4b57a377[m
+Author: Sahajewel <jewelsaha072@gmail.com>
+Date:   Tue Apr 15 21:00:17 2025 +0900
+
+    app created
