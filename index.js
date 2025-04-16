@@ -175,6 +175,34 @@ async function run() {
       console.log("uers",result)
       res.send(result)
     })
+    app.put("/users-profile-update",verifyToken, async(req, res)=>{
+   try{
+    const email = req.user.email;
+    const filter = {email};
+    const {name, photo} = req.body;
+    const updateDoc = {
+      $set:{
+        name: name,
+        photo: photo
+      }
+    }
+    const result = await userCollection.updateOne(filter, updateDoc)
+    if(result.matchedCount === 0){
+      return res.status(404).json({message: "user not found"})
+    }
+    res.json({
+      success: true,
+      menubar: "profile updated successfully",
+      modifiedCount: result.modifiedCount
+    })
+   }
+   catch(error){
+    console.log("error updating profile", error);
+    res.status(500).json({message: "failed to update profile"})
+
+   }
+
+    })
       // mobile api
 app.get("/mobile", async(req, res)=>{
   const result = await mobileCollection.find().toArray()
